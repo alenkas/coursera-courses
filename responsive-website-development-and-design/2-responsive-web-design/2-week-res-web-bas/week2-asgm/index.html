@@ -6,7 +6,7 @@
     <title>Week 2 Assignment</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
-	<script src="js/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>
 
@@ -21,17 +21,70 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a href="index.html" class="navbar-brand">Tasks</a>
-            </div> 
+            </div>
             <!-- end of navbar header -->
             <div class="collapse navbar-collapse" id="main-navbar">
-            	<ul class="nav navbar-nav">
-            		<li class="active"><a href="index.html">Home</a></li>
-            		<li><a href="task.html">Task</a></li>
-            		<li><a href="about.html">About</a></li>
-            	</ul>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="task.html">Task</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
             </div>
         </div>
     </nav>
+    <div class="container">
+        <div class="page-header">
+            <h1>Welcome to Tasks 2.0!</h1>
+        </div>
+        <ol class="breadcrumb">
+            <li class="active">Home</li>
+        </ol>
+        <p>We'd love to present you a new tool that will help you organize your day.
+            <br> Planning never've been so easy!</p>
+        <section class="tasks-list">
+            <div class="table">
+                <table class="table table-responsive table-bordered">
+                    <tr class="success">
+                        <th>#</th>
+                        <th>Tasks list</th>
+                    </tr>
+                    <tr class="warning">
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td><a href="task.html">Go Shopping!</a></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td><a href="task.html">Go Shopping!</a></td>
+                    </tr>
+                    <tr class="active">
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td><a href="task.html">Go Shopping!</a><span class="label label-success">Done!</span></td>
+                    </tr>
+                    <tr class="active">
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td><a href="task.html">Go Shopping!</a><span class="label label-success">Done!</span></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td><a href="task.html">Go Shopping!</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="text-center"><a href="#">Add new task</a></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </div>
 </body>
 
 </html>

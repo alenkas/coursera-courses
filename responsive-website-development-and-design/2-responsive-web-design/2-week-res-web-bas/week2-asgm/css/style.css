@@ -1,0 +1,79 @@
+.table {
+    width: 80%;
+}
+
+.table th:first-child,
+.table td:first-child {
+    width: 10%;
+}
+
+table.table.table-responsive.table-bordered > tbody > tr.warning:hover > td {
+    background-color: #fff !important;
+}
+
+table.table td {
+    position: relative;
+}
+
+span.label {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+tr > td > a {
+    display: block;
+    color: #000;
+}
+
+tr.warning:hover > td > a {
+    text-decoration: underline;
+}
+
+tr.active > td > a {
+    text-decoration: none;
+    color: #ccc;
+    font-weight: normal;
+}
+
+section.single-task .bg-success,
+section.single-task .bg-warning {
+    border: 1px solid #ddd;
+}
+
+.single-task p {
+    margin-top: 10px;
+    border-bottom: 1px dashed black;
+}
+
+.single-task > div {
+    padding: 10px 20px;
+}
+
+.buttons {
+    padding: 10px;
+}
+
+.media {
+    padding: 10px 0;
+}
+
+.media-object {
+    border: 1px solid #ddd;
+}
+
+.single-task p.media-addition {
+    border: none;
+    color: #949494;
+}
+
+.single-task p.assigned-to {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: .8em;
+}
