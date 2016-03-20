@@ -1,0 +1,101 @@
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans);
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+.row {
+    width: 100%;
+    margin: 0 auto;
+}
+
+h1 {
+	font-size: 1.75em;
+}
+
+/****** Logo Headet ******/
+
+.navbar-default {
+	background-color: #999999;
+	border-left: 0;
+	border-right: 0;
+	border-color: #000;
+	border-radius: 0;
+}
+
+.navbar-default .navbar-collapse {
+	padding: 0;
+}
+
+.navbar-default .navbar-nav {
+	background-color: #ccc;
+	border-color: #DE9396;
+}
+
+.navbar-default a.navbar-brand {
+	color: #000;
+}
+
+.navbar-default .navbar-nav {
+	margin: 0;
+}
+
+.navbar-default .navbar-nav>li {
+	border-bottom: 1px solid #DDD;
+}
+
+/****** Menu tiles ******/
+
+.row section {
+	min-height: 1500px;
+}
+
+section div {
+	padding: 10px;
+	background-color: #999999;
+	border: 1px solid black;
+	position: relative;
+}
+
+section h4 {
+	font-size: 1.55em;
+	font-weight: bold;
+	letter-spacing: 1.2px;
+	padding: 0px 5px;
+}
+
+section p {
+	margin-bottom: 0;
+}
+
+/******* Large screens *******/
+
+@media screen and (min-width: 992px) {
+
+	section {
+		float: left;
+		padding: 10px;
+	}
+
+    .col-large {
+        width: 33.33%;
+    }
+}
+
+/******* Tablet screens *******/
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+	section {
+		float: left;
+		padding: 10px;
+	}
+
+    .col-medium {
+        width: 50%;
+    }
+}

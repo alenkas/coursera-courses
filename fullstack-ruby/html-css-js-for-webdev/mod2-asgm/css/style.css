@@ -1,0 +1,88 @@
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans);
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+.row {
+    width: 100%;
+}
+
+h1 {
+	text-align: center;
+	font-size: 1.75em;
+}
+
+section {
+    padding: 10px 30px;
+}
+
+section div {
+	padding: 20px 10px 5px;
+	background-color: #999999;
+	border: 1px solid black;
+	position: relative;
+}
+
+section h4 {
+	font-size: 1.25em;
+	letter-spacing: 1.2px;
+	width: 25%;
+	padding: 0px 5px;
+	/* Make title border overlap with parent div to make it cuter */
+	margin: -1px -1px 0 0;
+	text-align: center;
+	border: 1px solid black;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+section p {
+	margin-bottom: 0;
+}
+
+.chicken h4 {
+    background-color: #DE9396;
+}
+
+.beef h4 {
+    background-color: #CF313C;
+    color: #fff;
+}
+
+.sushi h4 {
+    background-color: #E5D591;
+}
+
+/******* Large screens *******/
+
+@media screen and (min-width: 992px) {
+
+	section {
+		float: left;
+		padding: 10px;
+	}
+
+    .col-large {
+        width: 33.33%;
+    }
+}
+
+/******* Tablet screens *******/
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+	section {
+		float: left;
+		padding: 10px;
+	}
+
+    .col-medium {
+        width: 50%;
+    }
+}

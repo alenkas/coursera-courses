@@ -1,0 +1,27 @@
+body {
+/* Add color to body */
+  background-color: #ccc;
+/* Remove spaces */
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+/* Specify special font for h1 */
+  font-family: Times New Roman, serif;
+/* H1 colored in black */
+  color: #000;
+/* Heading is aligned in center */
+  text-align: center;
+  /* Remove margins so that h1 block sticks to the very document top */
+  margin: 0;
+  /* Padding increases h1 width and height */
+  padding: 10px;
+  /* Choose white background for h1 */
+  background-color: #fff;
+  /* This is hardly can be seen, but before shadow there is a dashed border */
+  border-bottom: 1px dashed #ff0000;
+/* This gives h1 block a nice shadow */
+  box-shadow: 0px 0px 10px 1px #000;
+}
+
