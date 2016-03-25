@@ -41,7 +41,7 @@
 <script id="category-template" type="text/x-handlebars-template">
     <ul class="nav nav-tabs">
         {{#each category}}
-        <li class="{{#if @first}}active{{/if}}" role="presentation"><a href="#" id="{{name}}" data-id="{{@index}}">{{name}}</a></li>
+        <li class="{{#if @first}}active{{/if}}" id="{{name}}" role="presentation" data-id="{{@index}}"><a href="#">{{name}}</a></li>
         {{/each}}
     </ul>
 </script>

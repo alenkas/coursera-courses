@@ -42,10 +42,9 @@ $(document).ready(function () {
 
         $(".nav-tabs .active").removeClass("active");
 
-        $("#Reptiles").addClass("active");
+        $("#Mammals").addClass("active");
 
         showTemplate(animals_template, current_category);
-        console.log("mammals");
     });
     $("#Birds").click(function () {
 
@@ -54,7 +53,7 @@ $(document).ready(function () {
 
         $(".nav-tabs .active").removeClass("active");
 
-        $("#Reptiles").addClass("active");
+        $("#Birds").addClass("active");
 
         showTemplate(animals_template, current_category);
     });
