@@ -1,9 +1,9 @@
 // put your javascript code here
 
-var category_template, animals_template;
+var category_template, animals_template, description_template;
 
 var current_category = animals_data.category[0];
-var current_animals = current_category.animals[0];
+var current_animal = current_category.animals[0];
 
 function showNav(template, data) {
     var html = template(data);
@@ -22,6 +22,9 @@ $(document).ready(function () {
     source = $("#animals-template").html();
     animals_template = Handlebars.compile(source);
 
+    source = $("#description-template").html();
+    description_template = Handlebars.compile(source);
+
     showNav(category_template, animals_data);
 
     $("#Reptiles").click(function () {
@@ -34,6 +37,21 @@ $(document).ready(function () {
         $("#Reptiles").addClass("active");
 
         showTemplate(animals_template, current_category);
+
+        $(".btn").click(function(){
+            console.log("click");
+            console.log(current_animal);
+
+            var index = $(this).data("id");
+
+            current_animal = current_category.animals[index];
+
+            showTemplate(description_template, current_animal);
+
+            $('.carousel').carousel({
+                interval: 2000
+            });
+        });
     });
     $("#Mammals").click(function () {
 
@@ -45,6 +63,21 @@ $(document).ready(function () {
         $("#Mammals").addClass("active");
 
         showTemplate(animals_template, current_category);
+
+        $(".btn").click(function(){
+            console.log("click");
+            console.log(current_animal);
+
+            var index = $(this).data("id");
+
+            current_animal = current_category.animals[index];
+
+            showTemplate(description_template, current_animal);
+
+            $('.carousel').carousel({
+                interval: 2000
+            });
+        });
     });
     $("#Birds").click(function () {
 
@@ -56,9 +89,26 @@ $(document).ready(function () {
         $("#Birds").addClass("active");
 
         showTemplate(animals_template, current_category);
+
+        $(".btn").click(function(){
+            console.log("click");
+            console.log(current_animal);
+
+            var index = $(this).data("id");
+
+            current_animal = current_category.animals[index];
+
+            showTemplate(description_template, current_animal);
+
+            $('.carousel').carousel({
+                interval: 2000
+            });
+        });
     });
 
     $("#Reptiles").click();
+
+
 
 
 });
