@@ -2,22 +2,69 @@
 
 <head>
 
-<!-- include our libraries and css files -->
+    <!-- include our libraries and css files -->
 
-<script src="js/jquery-2.1.4.min.js"></script>
-<script src="js/handlebars-v3.0.3.js"></script>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/handlebars-v3.0.3.js"></script>
 
-<script src="js/bootstrap.min.js"></script>
-<script src="AnimalsData.js"></script>
-<script src="assignment.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="AnimalsData.js"></script>
+    <script src="assignment.js"></script>
 
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="assignment.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="assignment.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <!-- put your HTML here -->
+<!-- put your HTML here -->
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand">
+                <img src="" alt="Brand"/>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="page-header">
+        <h1>Animals</h1>
+    </div>
+    <div id="animals-tab"></div>
+    <div id="content"></div>
+</div>
+
+<script id="category-template" type="text/x-handlebars-template">
+    <ul class="nav nav-tabs">
+        {{#each category}}
+        <li class="{{#if @first}}active{{/if}}" role="presentation"><a href="#" id="{{name}}" data-id="{{@index}}">{{name}}</a></li>
+        {{/each}}
+    </ul>
+</script>
+
+<script id="animals-template" type="text/x-handlebars-template">
+    {{#each animals}}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="media">
+                <div class="media-left">
+                    <a href="#" class="thumbnail">
+                        <img src="{{image1}}" alt="{{name}}"/>
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">{{name}}</h4>
+
+                    <p>{{description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</script>
 
 </body>

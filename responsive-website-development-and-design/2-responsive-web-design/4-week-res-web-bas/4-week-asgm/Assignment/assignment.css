@@ -1,1 +1,14 @@
 /* put your css code here */
+
+.carousel-inner > .item > img {
+    display: inline-block;
+}
+
+.media,
+.media:first-child {
+    margin-top: 15px;
+}
+
+.thumbnail > img {
+    max-width: 200px;
+}
