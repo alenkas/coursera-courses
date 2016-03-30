@@ -1,0 +1,62 @@
+<!-- This is a first example of using a template -->
+
+<head>
+
+    <!-- include our libraries and css files -->
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/handlebars-v3.0.3.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="AnimalsData.js"></script>
+    <script src="assignment.js"></script>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="assignment.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- put your HTML here -->
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand">
+                <img src="images/raccoon-small.jpg" alt="Brand"/>
+            </a>
+        </div>
+        <!-- /.navbar-header -->
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Animals</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </div> 
+    <!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+    <div class="page-header">
+        <h1>About</h1>
+    </div>
+    <p>Welcome to our site about animals! <br/>
+        Here you can find some information about some most popular animals as well as see their photos. Isn't it great?
+        </p>
+    <p>Just click any animal category, then any picture of animal you've liked to know more.</p>
+    <div id="animals-tab"></div>
+    <div id="content"></div>
+</div>
+
+<script id="category-template" type="text/x-handlebars-template">
+    <ul class="nav nav-tabs">
+        {{#each category}}
+        <li class="{{#if @first}}active{{/if}}" id="{{name}}" role="presentation" data-id="{{@index}}"><a href="#">{{name}}</a></li>
+        {{/each}}
+    </ul>
+</script>
+
+
+</body>

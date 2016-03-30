@@ -1,7 +1,15 @@
 /* put your css code here */
 
-.carousel-inner > .item > img {
-    display: inline-block;
+.navbar-brand {
+	height: auto;
+}
+
+.navbar-brand > img {
+	border: 1px solid #000;
+}
+
+.navbar-nav li {
+	padding: 10px 0;
 }
 
 .media,
@@ -11,4 +19,18 @@
 
 .thumbnail > img {
     /*max-width: 200px;*/
+}
+
+.carousel-inner > .item {
+	height: 375px;
+	background-color: #000;
+}
+
+.carousel-inner > .item > img {
+	width: 100%;
+}
+
+.show-grid [class^=col-] {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }

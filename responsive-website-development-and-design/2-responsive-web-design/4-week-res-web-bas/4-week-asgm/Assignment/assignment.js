@@ -15,7 +15,35 @@ function showTemplate(template, data) {
     $("#content").html(html);
 }
 
-$(document).ready(function () {
+function readMore() {
+    var index = $(this).data("id");
+    current_animal = current_category.animals[index];
+
+    showTemplate(description_template, current_animal);
+
+    $(".js-back").click(loadAnimals);
+
+    $('.carousel').carousel({
+        interval: 10000
+    });
+}
+
+function loadAnimals() {
+    var index = $(this).data("id");
+    current_category = animals_data.category[index];
+
+    $(".nav-tabs .active").removeClass("active");
+
+    $(this).addClass("active");
+
+    showTemplate(animals_template, current_category);
+
+    $(".thumbnail img, .thumbnail .btn").click(readMore);
+}
+
+
+
+$(document).ready(function() {
     var source = $("#category-template").html();
     category_template = Handlebars.compile(source);
 
@@ -27,88 +55,7 @@ $(document).ready(function () {
 
     showNav(category_template, animals_data);
 
-    $("#Reptiles").click(function () {
-
-        var index = $(this).data("id");
-        current_category = animals_data.category[index];
-
-        $(".nav-tabs .active").removeClass("active");
-
-        $("#Reptiles").addClass("active");
-
-        showTemplate(animals_template, current_category);
-
-        $(".btn").click(function(){
-            console.log("click");
-            console.log(current_animal);
-
-            var index = $(this).data("id");
-
-            current_animal = current_category.animals[index];
-
-            showTemplate(description_template, current_animal);
-
-            $('.carousel').carousel({
-                interval: 2000
-            });
-        });
-    });
-    $("#Mammals").click(function () {
-
-        var index = $(this).data("id");
-        current_category = animals_data.category[index];
-
-        $(".nav-tabs .active").removeClass("active");
-
-        $("#Mammals").addClass("active");
-
-        showTemplate(animals_template, current_category);
-
-        $(".btn").click(function(){
-            console.log("click");
-            console.log(current_animal);
-
-            var index = $(this).data("id");
-
-            current_animal = current_category.animals[index];
-
-            showTemplate(description_template, current_animal);
-
-            $('.carousel').carousel({
-                interval: 2000
-            });
-        });
-    });
-    $("#Birds").click(function () {
-
-        var index = $(this).data("id");
-        current_category = animals_data.category[index];
-
-        $(".nav-tabs .active").removeClass("active");
-
-        $("#Birds").addClass("active");
-
-        showTemplate(animals_template, current_category);
-
-        $(".btn").click(function(){
-            console.log("click");
-            console.log(current_animal);
-
-            var index = $(this).data("id");
-
-            current_animal = current_category.animals[index];
-
-            showTemplate(description_template, current_animal);
-
-            $('.carousel').carousel({
-                interval: 2000
-            });
-        });
-    });
-
-    $("#Reptiles").click();
-
-
-
+    $(".nav-tabs li").click(loadAnimals);
+    $(".nav-tabs li:first-child").click();
 
 });
