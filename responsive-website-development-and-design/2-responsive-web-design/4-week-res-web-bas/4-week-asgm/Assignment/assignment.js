@@ -1,6 +1,6 @@
 // put your javascript code here
 
-var category_template, animals_template, description_template;
+var main_page_template, category_template, animals_template, description_template, about_template;
 
 var current_category = animals_data.category[0];
 var current_animal = current_category.animals[0];
@@ -15,47 +15,76 @@ function showTemplate(template, data) {
     $("#content").html(html);
 }
 
-function readMore() {
-    var index = $(this).data("id");
-    current_animal = current_category.animals[index];
+function readMore(event) {
+    var animal_index = $(this).data("id");
+    current_animal = current_category.animals[animal_index];
+
+    $("#animals-tab").addClass("hidden");
 
     showTemplate(description_template, current_animal);
 
-    $(".js-back").click(loadAnimals);
+    $(".js-back").attr("data-id", event.data.param);
+    $(".js-back").click(loadAnimalsList);
 
     $('.carousel').carousel({
         interval: 10000
     });
 }
 
-function loadAnimals() {
-    var index = $(this).data("id");
-    current_category = animals_data.category[index];
+function loadAnimalsList() {
+
+    $("#animals-tab").remove("hidden");
+    var category_index = $(this).data("id");
+    current_category = animals_data.category[category_index];
 
     $(".nav-tabs .active").removeClass("active");
 
-    $(this).addClass("active");
+    $(".nav-tabs li[data-id=" + category_index + "]").addClass("active");
 
-    showTemplate(animals_template, current_category);
+    // showTemplate(animals_template, current_category);
 
-    $(".thumbnail img, .thumbnail .btn").click(readMore);
+    // $(".thumbnail img, .thumbnail .btn").click({ param: category_index }, readMore);
 }
 
 
 
 $(document).ready(function() {
-    var source = $("#category-template").html();
+    var source = $("#main-page-template").html();
+    main_page_template = Handlebars.compile(source);
+
+    source = $("#category-template").html();
     category_template = Handlebars.compile(source);
 
-    source = $("#animals-template").html();
-    animals_template = Handlebars.compile(source);
+    // source = $("#animals-template").html();
+    // animals_template = Handlebars.compile(source);
 
-    source = $("#description-template").html();
-    description_template = Handlebars.compile(source);
+    // source = $("#description-template").html();
+    // description_template = Handlebars.compile(source);
 
-    showNav(category_template, animals_data);
+    // source = $("#about-template").html();
+    // about_template = Handlebars.compile(source);
 
-    $(".nav-tabs li").click(loadAnimals);
-    $(".nav-tabs li:first-child").click();
+    // Navigation between menu links
+
+    $("#main").click(function() {
+        console.log("main");
+        showTemplate(main_page_template);
+    });
+
+    $("#animals").click(function() {
+        $("#animals-tab").remove("hidden");
+        showNav(category_template, animals_data);
+        console.log("animals");
+        // Navigate between animals categories tabs
+        $(".nav-tabs li").click(loadAnimalsList);
+        $(".nav-tabs li:first-child").click();
+    });
+
+    $("#about").click(function() {
+        console.log("about");
+        showTemplate(about_template);
+    });
+
+    $("#main").click();
 
 });
