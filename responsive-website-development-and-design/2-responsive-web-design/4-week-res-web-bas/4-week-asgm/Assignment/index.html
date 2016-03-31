@@ -51,8 +51,12 @@
             {{/each}}
         </ul>
 
-        <div class="row show-grid">
-            {{#each category.[0].animals}}
+        
+    </script>
+    <script id="animals-template" type="text/x-handlebars-template">
+
+    <div class="row show-grid">
+            {{#each animals}}
             <div class="col-md-3">
                 <div class="thumbnail">
                     <img src="{{image1}}" alt="{{name}}" data-id="{{@index}}" />
@@ -64,8 +68,6 @@
             </div>
             {{/each}}
         </div>
-    </script>
-    <script id="animals-template" type="text/x-handlebars-template">
         
     </script>
     <script id="description-template" type="text/x-handlebars-template">

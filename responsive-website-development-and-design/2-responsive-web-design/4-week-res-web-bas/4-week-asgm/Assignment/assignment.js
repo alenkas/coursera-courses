@@ -33,7 +33,7 @@ function readMore(event) {
 
 function loadAnimalsList() {
 
-    $("#animals-tab").remove("hidden");
+    $("#animals-tab").removeClass("hidden");
     var category_index = $(this).data("id");
     current_category = animals_data.category[category_index];
 
@@ -41,9 +41,9 @@ function loadAnimalsList() {
 
     $(".nav-tabs li[data-id=" + category_index + "]").addClass("active");
 
-    // showTemplate(animals_template, current_category);
+    showTemplate(animals_template, current_category);
 
-    // $(".thumbnail img, .thumbnail .btn").click({ param: category_index }, readMore);
+    $(".thumbnail img, .thumbnail .btn").click({ param: category_index }, readMore);
 }
 
 
@@ -55,35 +55,41 @@ $(document).ready(function() {
     source = $("#category-template").html();
     category_template = Handlebars.compile(source);
 
-    // source = $("#animals-template").html();
-    // animals_template = Handlebars.compile(source);
+    source = $("#animals-template").html();
+    animals_template = Handlebars.compile(source);
 
-    // source = $("#description-template").html();
-    // description_template = Handlebars.compile(source);
+    source = $("#description-template").html();
+    description_template = Handlebars.compile(source);
 
-    // source = $("#about-template").html();
-    // about_template = Handlebars.compile(source);
+    source = $("#about-template").html();
+    about_template = Handlebars.compile(source);
+
+    // hide #animals-tab when user click other menu links
+    $(".navbar-nav a").click(function(e){
+        if(e.target.id == "animals") {
+            $("#animals-tab").removeClass("hidden");
+        } else {
+            $("#animals-tab").addClass("hidden");
+        }
+    });
 
     // Navigation between menu links
 
     $("#main").click(function() {
-        console.log("main");
         showTemplate(main_page_template);
     });
 
     $("#animals").click(function() {
-        $("#animals-tab").remove("hidden");
+        
         showNav(category_template, animals_data);
-        console.log("animals");
         // Navigate between animals categories tabs
         $(".nav-tabs li").click(loadAnimalsList);
         $(".nav-tabs li:first-child").click();
     });
 
     $("#about").click(function() {
-        console.log("about");
         showTemplate(about_template);
-    });
+    }); 
 
     $("#main").click();
 
