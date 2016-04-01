@@ -45,6 +45,13 @@
         <p>Just click any animal category, then any picture of animal you've liked to know more.</p>
     </script>
     <script id="category-template" type="text/x-handlebars-template">
+        <div class="page-header">
+            <h1>Animals</h1>
+        </div>
+        <p>Welcome to our site about animals!
+            <br/> Here you can find some information about some most popular animals as well as see their photos. Isn't it great?
+        </p>
+        <p>Just click any animal category, then any picture of animal you've liked to know more.</p>
         <ul class="nav nav-tabs">
             {{#each category}}
             <li class="{{#if @first}}active{{/if}}" id="{{name}}" role="presentation" data-id="{{@index}}"><a href="#">{{name}}</a></li>
