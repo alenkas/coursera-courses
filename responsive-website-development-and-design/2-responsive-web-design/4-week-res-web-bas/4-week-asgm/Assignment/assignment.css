@@ -1,15 +1,15 @@
 /* put your css code here */
 
 .navbar-brand {
-	height: auto;
+    height: auto;
 }
 
 .navbar-brand > img {
-	border: 1px solid #000;
+    border: 1px solid #000;
 }
 
 .navbar-nav li {
-	padding: 10px 0;
+    padding: 10px 0;
 }
 
 .media,
@@ -21,16 +21,66 @@
     /*max-width: 200px;*/
 }
 
+.carousel {
+    margin-bottom: 30px;
+}
+
+.carousel-inner {
+    border: 1px solid #000;
+}
+
 .carousel-inner > .item {
-	height: 375px;
-	background-color: #000;
+    height: 375px;
+    background-color: #000;
 }
 
 .carousel-inner > .item > img {
-	width: 100%;
+    width: 100%;
+}
+
+.carousel-indicators {
+    bottom: -40px;
+}
+
+.carousel-indicators li {
+    border: 1px solid #000;
+}
+
+.carousel-indicators .active {
+    background-color: #000;
+}
+
+.media-object {
+	width: 64px;
+	height: 64px;
+}
+
+.media {
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 4px;
+    float: none;
+}
+
+.media:hover {
+    background-color: #F5F5F5;
 }
 
 .show-grid [class^=col-] {
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+p {
+    margin: 10px 0;
+}
+
+@media all {
+    .carousel-indicators {
+        bottom: -40px;
+    }
+
+    .media {
+    	float: none;
+    }
 }

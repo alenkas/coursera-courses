@@ -32,24 +32,40 @@
         <!-- /.container-fluid -->
     </nav>
     <div class="container">
+        <div id="heading"></div>
         <div id="animals-tab"></div>
         <div id="content"></div>
     </div>
+    <!-- Template for main page. -->
     <script id="main-page-template" type=text/x-handlebars-template>
         <div class="page-header">
             <h1>Animals</h1>
         </div>
-        <p>Welcome to our site about animals!
-            <br/> Here you can find some information about some most popular animals as well as see their photos. Isn't it great?
+        <ol class="breadcrumb">
+            <li class="active">Home</li>
+        </ol>
+        <h4>Welcome to our site about animals!</h4>
+        <p> Here you can find some information about some most popular animals as well as see their photos. Isn't it great?
         </p>
         <p>Just click any animal category, then any picture of animal you've liked to know more.</p>
+        <div class="alert alert-success" role="alert">
+            I don't know what else I can write here to fill empty space, so just go ahead and check my work:)
+        </div>
+        <p>P.S. Here are funny raccoons for you:) Enjoy</p>
+        <p>
+            <img src="http://cs414322.vk.me/u316662021/docs/d7d1a84aa6f3/1.gif?extra=q2xXuoEbtZA724myju6Fcli0sDCsZNOii5vXuhw4q8uXgXZOmiisBFAmXQM8E7yxks81_EDuZFFQEDdPXpfbjKuF3PSigjGy1n8rb0UuHp-4CMTFAGDvjU40y4nPHQ3J4rtbeQ1EtQ" alt="Raccoons having fun">
+        </p>
     </script>
     <script id="category-template" type="text/x-handlebars-template">
         <div class="page-header">
             <h1>Animals</h1>
         </div>
-        <p>Welcome to our site about animals!
-            <br/> Here you can find some information about some most popular animals as well as see their photos. Isn't it great?
+        <ol class="breadcrumb">
+            <li><a href="#" data-link="home">Home</a></li>
+            <li class="active">Animals</li>
+        </ol>
+        <h4>Welcome to our site about animals!</h4>
+        <p> Here you can find some information about some most popular animals as well as see their photos. Isn't it great?
         </p>
         <p>Just click any animal category, then any picture of animal you've liked to know more.</p>
         <ul class="nav nav-tabs">
@@ -57,12 +73,10 @@
             <li class="{{#if @first}}active{{/if}}" id="{{name}}" role="presentation" data-id="{{@index}}"><a href="#">{{name}}</a></li>
             {{/each}}
         </ul>
-
-        
     </script>
+    <!-- Template for animals page -->
     <script id="animals-template" type="text/x-handlebars-template">
-
-    <div class="row show-grid">
+        <div class="row show-grid">
             {{#each animals}}
             <div class="col-md-3">
                 <div class="thumbnail">
@@ -75,58 +89,91 @@
             </div>
             {{/each}}
         </div>
-        
     </script>
+    <!-- Template for whole animal description heading -->
+    <script id="animal-heading-template" type="text/x-handlebars-template">
+        <div class="page-header">
+            <h1>{{name}}</h1>
+        </div>
+        <ol class="breadcrumb">
+            <li><a href="#" data-link="home">Home</a></li>
+            <li><a href="#" data-link="animals">Animals</a></li>
+            <li class="active">{{name}}</li>
+        </ol>
+    </script>
+    <!-- Template for animals albums grid. -->
     <script id="description-template" type="text/x-handlebars-template">
         <div class="row show-grid">
-            <div class="col-md-6">
-                <div class="page-header">
-                    <h3>{{name}}</h3>
-                </div>
-                <div id="carousel-animal-photo" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-animal-photo" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-animal-photo" data-slide-to="1"></li>
-                    </ol>
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <img src="{{image1}}" alt="{{name}}" class="carousel-img" />
-                        </div>
-                        <div class="item">
-                            <img src="{{image2}}" alt="{{name}}" class="carousel-img" />
-                        </div>
-                    </div>
-                    <!-- Controls -->
-                    <a class="left carousel-control" href="#carousel-animal-photo" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-animal-photo" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-                <!-- /.carousel -->
-                <div>
-                    <p>{{description}}</p>
-                </div>
-                <p>
-                    <a href="#" class="btn btn-primary js-back" role="button">Back</a>
-                </p>
+            <div id="animal" class="col-md-6">
             </div>
+            <div id="other-animals" class="col-md-6"></div>
             <!-- /.col-md-6 -->
         </div>
         <!-- /.row -->
     </script>
+    <!-- Template for whole animal description -->
+    <script id="animal-template" type="text/x-handlebars-template">
+        <div id="carousel-animal-photo" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-animal-photo" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-animal-photo" data-slide-to="1"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="{{image1}}" alt="{{name}}" class="carousel-img" />
+                </div>
+                <div class="item">
+                    <img src="{{image2}}" alt="{{name}}" class="carousel-img" />
+                </div>
+            </div>
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-animal-photo" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-animal-photo" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <!-- /.carousel -->
+        <div>
+            <p>{{description}}</p>
+        </div>
+        <p>
+            <a href="#" class="btn btn-primary js-back" role="button">Back</a>
+        </p>
+    </script>
+    <!-- Template for quick access to animals in the same category -->
+    <script id="same-category-animals" type="text/x-handlebars-template">
+        <div class="pull-right">
+            {{#each animals}}
+            <div class="media col-md-6" data-id="{{@index}}">
+                <div class="media-left">
+                    <a href="#">
+                        <img class="media-object" src="{{image1}}" alt="{{name}}">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">{{name}}</h4>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </script>
+    <!-- Template for about page. -->
     <script id="about-template" type="text/x-handlebars-template">
         <div class="page-header">
             <h1>About</h1>
         </div>
-        <p>Welcome to our site about animals!
-            <br/> Here you can find some information about some most popular animals as well as see their photos. Isn't it great?
-        </p>
-        <p>Just click any animal category, then any picture of animal you've liked to know more.</p>
+        <ol class="breadcrumb">
+            <li><a href="#" data-link="home">Home</a></li>
+            <li class="active">About</li>
+        </ol>
+        <h4>Welcome to our site about animals!</h4>
+        <p> You've reached last page. Well done!</p>
+        <p>I hope your journey was full of fun and informative. Now you know a lot more about animals. And this is just a beginning..</p>
     </script>
 </body>
