@@ -1,12 +1,16 @@
-// .col-md-3,
-// .col-md-6,
-// .col-md-12 {
-// 	border: 1px solid #000;
-// 	min-height: 40px;
-// }
+/*.col-md-3,
+.col-md-6,
+.col-md-12 {
+border: 1px solid #000;
+min-height: 40px;
+}*/
 
 #home_templ,
 #profile_templ,
-#messages_templ {
+#question_templ {
 	display: none;
+}
+
+#answer {
+	border: 1px solid black;
 }
