@@ -1,18 +1,93 @@
 /* These styles are written by myself */
 
-#home_templ,
-#profile_templ,
-#question_templ {
-	display: none;
+@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+#home_template,
+#profile_template,
+#question_template {
+    display: none;
+}
+
+.jumbotron {
+	background-image: url("https://connorlenahan.files.wordpress.com/2014/02/2013_03_puppy-dog-smile-for-dekstop-hd.jpg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100%;
+}
+
+.jumbotron h1,
+.jumbotron p{
+	text-shadow: 1px 1px 1px #ddd;
 }
 
 .media.thumbnail {
-	opacity: .8;
+    opacity: .8;
 }
 
 .media.thumbnail:hover {
-	border: 1px solid #BBBBBB;
-	opacity: 1;
+    border: 1px solid #BBBBBB;
+    opacity: 1;
+}
+
+#home_template h4,
+#question_template h4 {
+	margin: 10px -15px;
+	padding: 0 15px 15px;
+	border-color: #eee #eee #e5e5e5;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+ul.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons li {
+    vertical-align: top;
+    display: inline;
+}
+
+.social-icons a {
+    text-decoration: none;
+}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+.list-inline li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-bottom: 10px;
+}
+
+/*Change icons size here*/
+
+.social-icons .fa {
+    font-size: 1.2em;
+}
+
+/*Change icons circle size and color here*/
+
+
+.social-icons .fa-github {
+    color: #070709;
+}
+
+.social-icons .fa-facebook {
+    color: #3C599F;
+}
+
+.social-icons .fa-twitter {
+    color: #32CCFE;
 }
 
 /* These styles are copied from Bootstrap site */
@@ -39,12 +114,19 @@
     letter-spacing: 1px;
 }
 
-.pf-main:after { content: "Main"; }
-.pf-langs:after { content: "Languages"; }
-.pf-courses:after { content: "Courses"; }
+.pf-main:after {
+    content: "Main";
+}
 
-@media (min-width: 768px)
-.profile {
+.pf-langs:after {
+    content: "Languages";
+}
+
+.pf-courses:after {
+    content: "Courses";
+}
+
+@media (min-width: 768px) .profile {
     margin-right: 0;
     margin-left: 0;
     background-color: #fff;
