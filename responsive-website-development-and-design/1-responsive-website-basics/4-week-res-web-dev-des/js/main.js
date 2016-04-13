@@ -1,10 +1,11 @@
 $(function() {
     function changeContent(templ) {
+        var $content = $("#content");
         // Hide previous content before loading new one
-        $("#content").children("div").css("display", "none");
+        $content.children("div").css("display", "none");
         // Make requested content visible to user
         templ.style.display = "block";
-        $("#content").append(templ);
+        $content.append(templ);
     }
 
     $(".nav-pills").find("a").click(function() {
@@ -20,17 +21,18 @@ $(function() {
     });
 
     // Simulate that first link in menu to be clicked on load
-    $(".nav-pills").find("li:first-child a").trigger("click");
+    $(".nav-pills").find("li:nth-child(2) a").trigger("click");
 
     // Get element by its id
     var select_questions = document.getElementById("questions");
+
     var create_option;
     // for each item in the array create an option with its unique
     // id and unique text
     for (var i = 0; i < data.length; i++) {
         create_option = document.createElement("option");
         // set unique id for each item
-        create_option.setAttribute("value", data[i].id);
+        create_option.setAttribute("value", data.indexOf(data[i]));
         // set unique text for each item
         create_option.text = data[i].question;
         // append aeach item to its parent - select - so that they are
@@ -60,7 +62,21 @@ $(function() {
             case 3:
                 $my_answer.html(data[$option_value].answer);
                 break;
+            case 4:
+                $my_answer.html(data[$option_value].answer);
+                break;
+            case 5:
+                $my_answer.html(data[$option_value].answer);
+                break;
         }
+    });
+
+    // Simulate .media.thumbnail div to act like a link
+    $(".media.thumbnail").click(function(){
+    	// Get link data attribute
+    	var $link = $(this).find("a").data("link");
+    	// Using attribute value open link in new window
+    	window.open($link, "_blank");
     });
 
 });

@@ -6,6 +6,8 @@
     <title>Module 4 Assignment</title>
     <!-- Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/devicon.min.css">
+    <link rel="stylesheet" href="css/devicon-colors.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- Scripts -->
     <script src="js/jquery.min.js"></script>
@@ -50,7 +52,7 @@
                 </ul>
             </div>
             <div class="col-md-7" id="content"></div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-5 col-xs-5">
                 <div class="thumbnail">
                     <img src="https://avatars1.githubusercontent.com/u/6797133?v=3&s=400" alt="profile photo">
                     <div class="caption">
@@ -79,12 +81,70 @@
     <!-- template for 'profile' tab -->
     <div id="profile_templ">
         <h4>Profile</h4>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        <div class="profile pf-main" data-example-id="simple-ol">
+            <p>Hello from Russia :)</p>
+            <p>My name is Alenka. Right now I work as a Front-End Developer. Life is still all about learning and practicing that's why I'm on Coursera. Also I like the way they teach the material.</p>
+            <p>When I'm not at work I'm with friends, doing sports, or doing any of my hobbies. Love reading a lot. I'm actually collecting books to have my own big library - the ideal one for me like in "Beaty & the Beast. Well, If that happens, I will be the happiest one:)</p>
+        </div>
+        <div class="profile pf-langs" data-example-id="simple-ol">
+            <p>Programming languages I'm interested in:</p>
+            <ul>
+                <li>HTML <i class="devicon-html5-plain colored"></i></li>
+                <li>CSS <i class="devicon-css3-plain colored"></i></li>
+                <li>JavaScript <i class="devicon-javascript-plain colored"></i></li>
+                <li>Ruby <i class="devicon-ruby-plain colored"></i></li>
+            </ul>
+        </div>
+        <div class="profile pf-courses" data-example-id="simple-ol">
+            <p>Courses I'm following on Coursera right now:</p>
+            <ul class="media-list">
+                <li class="media thumbnail">
+                    <div class="media-left">
+                        <a href="#" target="_blank" data-link="https://www.coursera.org/learn/website-coding/home/welcome"></a>
+                        <img class="media-object" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/5d/056e103cf111e5a191b717b8272db1/MOOC-1-V-5.png?auto=format&dpr=1&h=72&w=72&fit=fill&bg=FFF" alt="Responsive Website Basics: Code with HTML, CSS, and JavaScript">
+                    </div>
+                    <div class="media-body media-middle">
+                        <h4 class="media-heading">Responsive Website Basics: Code with HTML, CSS, and JavaScript</h4> University of London & Goldsmiths, University of London
+                    </div>
+                </li>
+                <li class="media thumbnail">
+                    <div class="media-left">
+                        <a href="#" target="_blank" data-link="https://www.coursera.org/learn/meteor-development/home/welcome"></a>
+                        <img class="media-object" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/6a/e2aa603cf211e5a922adc5eaf6c043/MOOC-3.png?auto=format&dpr=1&h=72&w=72&fit=fill&bg=FFF" alt="Responsive Website Basics: Code with HTML, CSS, and JavaScript">
+                    </div>
+                    <div class="media-body media-middle">
+                        <h4 class="media-heading">Introduction to Meteor.js Development</h4> University of London & Goldsmiths, University of London
+                    </div>
+                </li>
+                <li class="media thumbnail">
+                    <div class="media-left">
+                        <a href="#" target="_blank" data-link="https://www.coursera.org/learn/web-application-development/home/welcome"></a>
+                        <img class="media-object" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/bf/d0c2f03cf211e5a922adc5eaf6c043/MOOC-4.png?auto=format&dpr=1&h=72&w=72&fit=fill&bg=FFF" alt="Responsive Website Basics: Code with HTML, CSS, and JavaScript">
+                    </div>
+                    <div class="media-body media-middle">
+                        <h4 class="media-heading">Web Application Development with JavaScript and MongoDB</h4> University of London & Goldsmiths, University of London
+                    </div>
+                </li>
+                <li class="media thumbnail">
+                    <div class="media-left">
+                        <a href="#" target="_blank" data-link="https://www.coursera.org/learn/responsive-website-examples/home/welcome"></a>
+                        <img class="media-object" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/46/f14f803cf211e5a191b717b8272db1/MOOC-5.png?auto=format&dpr=1&h=72&w=72&fit=fill&bg=FFF" alt="Responsive Website Basics: Code with HTML, CSS, and JavaScript">
+                    </div>
+                    <div class="media-body media-middle">
+                        <h4 class="media-heading">Responsive Website Tutorial and Examples</h4> University of London & Goldsmiths, University of London
+                    </div>
+                </li>
+                <li class="media thumbnail">
+                    <div class="media-left">
+                        <a href="#" target="_blank" data-link="https://www.coursera.org/learn/ruby-on-rails-intro/home/welcome"></a>
+                        <img class="media-object" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/01/6bfd203bb211e5badc79dbdaa0a51c/jhep-coursera-course1.png?auto=format&dpr=1&h=72&w=72&fit=fill&bg=FFF" alt="Responsive Website Basics: Code with HTML, CSS, and JavaScript">
+                    </div>
+                    <div class="media-body media-middle">
+                        <h4 class="media-heading">Ruby on Rails: An Introduction</h4> Johns Hopkins University
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
     <!-- template for 'profile' tab -->
     <div id="question_templ">
@@ -103,10 +163,9 @@
                 <h3 class="panel-title">My answer</h3>
             </div>
             <div class="panel-body">
-                <div id="my-answer"></div>
+                <div id="my-answer">Answer will appear here</div>
             </div>
         </div>
-        
     </div>
 </body>
 

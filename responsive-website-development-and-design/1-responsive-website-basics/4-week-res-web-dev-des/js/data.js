@@ -1,21 +1,26 @@
 var data = [
 	{
-		"id": 0,
-		"question": "choose a question"
+		"question": "choose a question",
+		"answer": "Answer will appear here"
 	},
 	{
-		"id": 1,
-		"question": "what's your age?",
-		"answer": "i'm not telling you"
+		"question": "What's your age?",
+		"answer": "I'm not telling you :)"
 	},
 	{
-		"id": 2,
-		"question": "what's your fav color?",
+		"question": "What's your fav color?",
 		"answer": "Mm.. white, probably"
 	},
 	{
-		"id": 3,
-		"question": "what's your real name?",
+		"question": "What's your real name?",
 		"answer": "You didn't expect that I would tell you that, did ya?:)"
+	},
+	{
+		"question": "bla",
+		"answer": "bla"
+	},
+	{
+		"question": "Who is that boy on picture to the right?",
+		"answer": "It's Killua. He appears in 'Huntex x Hunter' series. Highly recommended for watching."
 	}
 ]

@@ -1,9 +1,4 @@
-/*.col-md-3,
-.col-md-6,
-.col-md-12 {
-border: 1px solid #000;
-min-height: 40px;
-}*/
+/* These styles are written by myself */
 
 #home_templ,
 #profile_templ,
@@ -11,6 +6,51 @@ min-height: 40px;
 	display: none;
 }
 
-#answer {
-	border: 1px solid black;
+.media.thumbnail {
+	opacity: .8;
+}
+
+.media.thumbnail:hover {
+	border: 1px solid #BBBBBB;
+	opacity: 1;
+}
+
+/* These styles are copied from Bootstrap site */
+
+.profile {
+    position: relative;
+    padding: 45px 15px 15px;
+    margin: 0 -15px 15px;
+    border-color: #e5e5e5 #eee #eee;
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    // -webkit-box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+    // box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+}
+
+.profile:after {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #959595;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.pf-main:after { content: "Main"; }
+.pf-langs:after { content: "Languages"; }
+.pf-courses:after { content: "Courses"; }
+
+@media (min-width: 768px)
+.profile {
+    margin-right: 0;
+    margin-left: 0;
+    background-color: #fff;
+    border-color: #ddd;
+    border-width: 1px;
+    border-radius: 4px 4px 0 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
