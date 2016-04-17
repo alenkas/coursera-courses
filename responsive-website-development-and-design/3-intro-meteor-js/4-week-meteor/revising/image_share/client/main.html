@@ -3,24 +3,58 @@
 </head>
 
 <body>
-    <h1>Welcome to Coursera!</h1> 
+    {{>image_add_form }} {{>images_sort}}
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            {{> loginButtons}}
+        </div>
+    </nav>
     <div class="container">
-      {{> images}}  
+        <h1>Welcome to image share {{username}}!</h1> {{>images}}
     </div>
-    
 </body>
+<template name="image_add_form">
+    <div class="modal fade" id="image_add_form">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modale-header">
+                    <div class="modal-title"></div>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="js-add-image">
+                        <input type="text" name="img_src">
+                        <input type="text" name="img_alt">
+                        <button type="submit" class="btn btn-success">save</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-warning" data-dismiss="modal">cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<template name="images_sort">
+    <button class="btn btn-info js-sort-date">date</button>
+    <button class="btn btn-info js-sort-rating">rating</button>
+</template>
 <template name="images">
+    <!-- Show add image button only if user is logged in -->
+    {{#if currentUser}}
+    <button class="btn btn-success js-show-image-form">add image</button>
+    {{/if}}
     <div class="row">
         {{#each images}}
         <div class="col-xs-12 col-md-3" id="{{_id}}">
             <div class="thumbnail">
-                <img class="js-image" src="{{img_src}}" alt="{{img_alt}}">
+                <img class="js-image thumbnail-img" src="{{img_src}}" alt="{{img_alt}}">
             </div>
             <div class="caption">
                 <h3>Rating: {{rating}}</h3>
-                <p>description of the image</p>
+                <p>{{img_alt}}</p>
+                <p>User: <a href="#" class="js-set-image-filter">{{getUser createdBy}}</a></p>
                 <p>
-                  {{>starsRating mutable=true class="js-rate-image" id=_id}}
+                    {{>starsRating mutable=true class="js-rate-image" id=_id}}
                 </p>
                 <button class="js-delete-image btn btn-warning">delete</button>
             </div>
