@@ -1,4 +1,4 @@
-import { Meteor } from 'meteor/meteor';
+
 
 Meteor.startup(function() {
     if (Images.find().count() == 0) {

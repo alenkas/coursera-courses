@@ -3,16 +3,32 @@
 </head>
 
 <body>
-    {{>image_add_form }} {{>images_sort}}
+</body>
+<template name="ApplicationLayout">
+    {{> yield "navbar"}} {{> yield "main"}}
+</template>
+<template name="welcome">
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Welcome to image share {{username}}!</h1>
+            <a href="/images" class="btn btn-info">ENTER</a>
+        </div>
+    </div>
+</template>
+<template name="image">
+  <div class="container">
+    <h2>{{img_alt}}</h2>
+  <a href="/images"><img src="/{{img_src}}" alt="" class="single-img"></a>  
+  </div>
+  
+</template>
+<template name="navbar">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             {{> loginButtons}}
         </div>
     </nav>
-    <div class="container">
-        <h1>Welcome to image share {{username}}!</h1> {{>images}}
-    </div>
-</body>
+</template>
 <template name="image_add_form">
     <div class="modal fade" id="image_add_form">
         <div class="modal-dialog">
@@ -39,28 +55,39 @@
     <button class="btn btn-info js-sort-rating">rating</button>
 </template>
 <template name="images">
-    <!-- Show add image button only if user is logged in -->
-    {{#if currentUser}}
-    <button class="btn btn-success js-show-image-form">add image</button>
+    <div class="container js-container">
+        <!-- Show add image button only if user is logged in -->
+        {{#if currentUser}}
+        <button class="btn btn-success js-show-image-form">add image</button>
+        {{/if}}
+        <h2>
+    {{#if filtering_images}}
+    Showing images by user {{getFilterUser}}. <a href="#" class="js-unset-image-filter">show all images</a>
     {{/if}}
-    <div class="row">
-        {{#each images}}
-        <div class="col-xs-12 col-md-3" id="{{_id}}">
-            <div class="thumbnail">
-                <img class="js-image thumbnail-img" src="{{img_src}}" alt="{{img_alt}}">
+    </h2>
+        <div class="row">
+            {{#each images}}
+            <div class="col-xs-12 col-md-3" id="{{_id}}">
+                <div class="thumbnail">
+                    <a href="/image/{{_id}}"><img class="js-image thumbnail-img" src="{{img_src}}" alt="{{img_alt}}"></a>
+                </div>
+                <div class="caption">
+                    <h3>Rating: {{rating}}</h3>
+                    <p>{{img_alt}}</p>
+                    <p>
+                        User:
+                        <a href="#" class="js-set-image-filter">{{getUser createdBy}}</a>
+                    </p>
+                    <p>
+                        {{>starsRating mutable=true class="js-rate-image" id=_id}}
+                    </p>
+                    <button class="js-delete-image btn btn-warning">delete</button>
+                </div>
             </div>
-            <div class="caption">
-                <h3>Rating: {{rating}}</h3>
-                <p>{{img_alt}}</p>
-                <p>User: <a href="#" class="js-set-image-filter">{{getUser createdBy}}</a></p>
-                <p>
-                    {{>starsRating mutable=true class="js-rate-image" id=_id}}
-                </p>
-                <button class="js-delete-image btn btn-warning">delete</button>
-            </div>
+            <!-- /.col -->
+            {{/each}}
         </div>
-        <!-- /.image container -->
-        {{/each}}
+        <!-- /.row -->
     </div>
-    <!-- /.row -->
+    <!-- /.container -->
 </template>
