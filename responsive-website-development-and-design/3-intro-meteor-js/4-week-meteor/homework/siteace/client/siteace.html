@@ -5,10 +5,10 @@
 <body>
 </body>
 <template name="ApplicationLayout">
-    {{> yield "navbar"}} 
-	<div class="container">
-		{{> yield "main"}}	
-	</div>
+    {{> yield "navbar"}}
+    <div class="container">
+        {{> yield "main"}}
+    </div>
 </template>
 <template name="navbar">
     <!-- navbar  - you will be putting the login functions here -->
@@ -24,10 +24,11 @@
             <!-- </div> -->
         </div>
     </nav>
+    {{> searchBox}}
 </template>
 <template name="main">
     <!-- <div class="container"> -->
-        {{#if currentUser}} {{> website_form}} {{/if}} {{> website_list}}
+    {{#if currentUser}} {{> website_form}} {{/if}} {{> website_list}}
     <!-- </div> -->
 </template>
 <template name="website_form">
@@ -64,8 +65,7 @@
         <a href="/{{_id}}" class="js-click-item">{{title}}</a>
         <p>
             {{description}}
-            <br>
-            {{getCreationDate _id}}
+            <br> {{getCreationDate _id}}
         </p>
         <a href="#">{{rating}}</a>
         <a href="#" class="btn btn-default js-upvote">
@@ -77,22 +77,36 @@
         <!-- you will be putting your up and down vote buttons in here! -->
     </li>
 </template>
-
 <template name="website_item_detailed">
-	<a href="/">Back</a>
-	<a href="/{{_id}}" class="js-click-item">{{title}}</a>
-        <p>
-            {{description}}
-            <br>
-            {{getCreationDate _id}}
-        </p>
-        <a href="#" class="btn btn-default js-upvote">
-            <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
-        </a>
-        <a href="#" class="btn btn-default js-downvote">
-            <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
-        </a>
-        <!-- <div class="comment-section">
-        	{{> commentsBox id=documentId}}
-        </div> -->
+    <a href="/">Back</a>
+    <br>
+    <a href="/{{url}}">{{title}}</a>
+    <p>
+        {{description}}
+        <br> {{getCreationDate _id}}
+    </p>
+    <a href="#">{{rating}}</a>
+    <a href="#" class="btn btn-default js-upvote">
+        <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+    </a>
+    <a href="#" class="btn btn-default js-downvote">
+        <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+    </a>
+    {{> comments}}
+</template>
+<template name="comments">
+    <div class="media">
+        <div class="media-left">
+            <a href="#">
+                <img class="media-object" src="..." alt="...">
+            </a>
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">{{getUser}}</h4> ...
+        </div>
+    </div>
+</template>
+
+<template name="searchBox">
+    
 </template>

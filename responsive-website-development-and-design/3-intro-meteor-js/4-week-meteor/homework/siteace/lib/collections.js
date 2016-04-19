@@ -20,6 +20,10 @@ Websites.allow({
     	}
     },
     remove: function(userId, doc) {
-
+    	if(Meteor.user()){
+    		return true;
+    	} else {
+    		return false;
+    	}
     }
 });

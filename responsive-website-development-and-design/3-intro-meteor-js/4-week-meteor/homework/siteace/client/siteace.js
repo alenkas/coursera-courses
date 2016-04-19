@@ -17,7 +17,7 @@ Router.route('/:_id', function(){
 	this.render('navbar', {
 		to: "navbar"
 	});
-	this.render('website_item', {
+	this.render('website_item_detailed', {
 		to: "main",
 		data: function(){
 			return Websites.findOne({ _id: this.params._id });
@@ -33,9 +33,7 @@ Accounts.ui.config({
 
 /// Comments config
 
-// Comments.ui.config({
-// 	template: 'bootstrap'
-// });
+
 
 /////
 // template helpers 
@@ -63,6 +61,28 @@ Template.website_item.helpers({
     }
 });
 
+Template.website_item_detailed.helpers({
+	getCreationDate: function(website_id){
+    	var website = Websites.findOne({ _id: website_id });
+    	if(website){
+    		return website.createdOn;
+    	} else {
+    		return null;
+    	}
+    }
+});
+
+Template.comments.helpers({
+	getUser: function(){
+		console.log(Meteor.user());
+    	var user = Meteor.user();
+    	// if(user){
+    		return user.username;
+    	// } else {
+    		// return null;
+    	// }
+    }
+});
 
 /////
 // template events 
@@ -130,10 +150,4 @@ Template.website_form.events({
         return false; // stop the form submit from reloading the page
 
     }
-});
-
-Template.website_item.events({
-	'click .js-click-item': function(){
-		// return false;
-	}
 });
