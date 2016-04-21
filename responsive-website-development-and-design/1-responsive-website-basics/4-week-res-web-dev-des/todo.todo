@@ -1,0 +1,21 @@
+Make a responsive, interactive web page using HTML, CSS and JavaScript. Create a web page about yourself or a subject you are interested in, using JavaScript, CSS and HTML. Your submission should consist of 3 files:
+
+ ✔ A HTML document @done (16-04-13 15:33)
+ ✔ A CSS document @done (16-04-13 15:33)
+ ✔ A JavaScript document  @done (16-04-13 15:33)
+
+ ✔ You can also upload additional files such as jQuery or Bootstrap if needed.  @done (16-04-13 15:33)
+
+The web page should have the following features:
+
+ ✔ It should display correctly if the person viewing it has placed all the files you have supplied in a folder on their machine @done (16-04-13 15:33)
+ ✔ It should use at least one of each of HTML img, h1 and div tags (and more if needed) @done (16-04-13 15:33)
+ ✔ It should use CSS to set the style of the text and other parts of the design as appropriate, in at least 3 ways. @done (16-04-13 15:33)
+ ✔ It should be responsive - it should change the layout if the screen size changes @done (16-04-13 15:33)
+ ✔ The user should be able to change the page in some way by interacting with a GUI element such as a button.  @done (16-04-13 15:33)
+ ✔ Write some text on the page explaining how the user can interact. You should implement this feature using JavaScript.  @done (16-04-13 15:33)
+
+
+ My notes:
+   ✔ menu links load data on click @done (16-04-12 18:40)
+   ✔ first menu link doesn't load data on load @done (16-04-13 10:51)
