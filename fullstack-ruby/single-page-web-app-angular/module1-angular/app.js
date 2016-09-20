@@ -1,23 +1,18 @@
 (function(){
 'use strict';
 
-angular.module('DIApp', [])
+angular.module('MsgApp', [])
 
-.controller('DIController', DICOntroller);
+.controller('MsgController', MsgController);
 
-function DICOntroller($scope, $filter){
+MsgController.$inject = ['$scope'];
+
+function MsgController($scope){
 	$scope.name = "Sam";
 	
-	$scope.upper = function(){
-		var upCase = $filter('uppercase');
-		$scope.name = upCase($scope.name);
-	};
+	$scope.sayMessage = function(){
+		return "Yaakov like eat healthy snacks";
+	}
 }
-
-function AnnonateMe(name, job, blah){
-	return "blah";
-}
-
-console.log(AnnonateMe.toString());
 
 })();
