@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="MsgApp">
+<html ng-app="CounterApp">
 <head>
 	<meta charset="UTF-8">
 	<title>AngularJS App</title>
@@ -7,15 +7,12 @@
 	<script src="app.js"></script>
 </head>
 <body>
-	<h1>Custom Filters</h1>
-	<div ng-controller="MsgController">
-		Message is: <br>
-		Original: {{sayMessage()}} <br>
-		Loves: {{sayLovesMessage()}} <br>
-		Truth: {{sayLovesMessage() | truth : 'healthy' : 'cookie'}} <br>
-		Big truth: {{sayLovesMessage() | truth : 'healthy' : 'cookie' | uppercase }}
+	<h1>Digest Cycle</h1>
+	<div ng-controller="CounterController">
+		<button ng-click="showNumbersOfWatchers()">Click me</button>
 		<div>
-			
+			<button ng-click="countOnce()">Up Once counter (once)</button>
+			<button ng-click="upCounter()">Increment counter (once)</button>
 		</div>
 	</div>
 </body>

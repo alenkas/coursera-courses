@@ -1,42 +1,38 @@
 (function(){
 'use strict';
 
-angular.module('MsgApp', [])
+angular.module('CounterApp', [])
 
-.controller('MsgController', MsgController)
-.filter('loves', LovesFilter)
-.filter('truth', TruthFilter);
+.controller('CounterController', CounterController);
 
- MsgController.$inject = ['$scope', 'lovesFilter'];
-  function MsgController($scope, lovesFilter) {
+CounterController.$inject = ['$scope'];
+	function CounterController($scope) {
+
+		$scope.onceCounter = 0;
+		$scope.counter = 0;
 	
-	$scope.sayMessage = function(){
-		var msg = "Yaakov likes eat healthy snacks";
-		return msg;
+		$scope.showNumbersOfWatchers = function(){
+			console.log($scope.$$watchersCount);
+		};	
+
+		$scope.countOnce = function(){
+			$scope.onceCounter = 1;
+		};
+
+		$scope.upCounter = function(){
+			$scope.counter++;
+		};
+
+		$scope.$watch('onceCounter', function(newValue, oldValue){
+			console.log(oldValue);
+			console.log(newValue);
+		});
+
+		$scope.$watch('counter', function(newValue, oldValue){
+			console.log(oldValue);
+			console.log(newValue);
+		});
 	}
 
-	$scope.sayLovesMessage = function(){
-		var msg = "Yaakov likes eat healthy snacks";
-
-		msg = lovesFilter(msg);
-		return msg;
-	}	
-}
-
-function LovesFilter(){
-		return function(input){
-			input = input || "";
-			input = input.replace("likes", "loves");
-			return input;
-		}
-	}
-
-function TruthFilter(){
-	return function (input, target, replace) {
-		input = input || "";
-			input = input.replace(target, replace);
-			return input;
-	}
-}
 
 })();
