@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="BindingApp">
+<html ng-app="ShoppingListApp">
 <head>
 	<meta charset="UTF-8">
 	<title>AngularJS App</title>
@@ -7,18 +7,27 @@
 	<script src="app.js"></script>
 </head>
 <body>
-	<h1>Digest Cycle</h1>
-	<div ng-controller="BidingController">
-		<button ng-click="showNumbersOfWatchers();">Log #</button>
-		<button ng-click="setFullName()"> Set Full Name</button> <br>
+	<h1>ng-repeat</h1>
+	<div ng-controller="ShoppingListController">
+		<!-- Shopping List #1 -->
+		<h3>Shopping List:</h3>
+		<!-- <ul>
+			<li ng-repeat="item in shoppingList1">{{ item }}</li>
+		</ul> -->
 
-		Full name is: {{ :: fullName}} <br>
-		<button ng-click="logFirstName()">Log First Name</button>
-		<button ng-click="logFullName()">Log Full Name</button>
+		<!-- Shopping List #2 -->
+		<!-- <ul>
+			<li ng-repeat="item in shoppingList2">Buy {{ item.quantity }} of {{ item.name }} (s)</li>
+		</ul> -->
 
-		<div>
-			<input type="text ng-model="firstName>
-		</div>
+		<!-- Shopping List #3 -->
+		<input type="text" ng-model="shoppingList2[0].quantity">
+		<ul>
+			<li ng-repeat="item in shoppingList2">{{ $index + 1 }}. Buy {{ item.quantity }} of {{ item.name }}(s)</li>
+		</ul>
+		<input type="text" ng-model="newItemName" placeholder="iten name">
+		<input type="text" ng-model="newItemQiantity" placeholder="item quantity">
+		<button ng-click="addToList()">Add To List</button>
 	</div>
 </body>
 </html>
