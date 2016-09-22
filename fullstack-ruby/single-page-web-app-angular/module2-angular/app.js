@@ -1,44 +1,29 @@
 (function(){
 'use strict';
 
-angular.module('CounterApp', [])
-.controller('CounterController', CounterController);
+angular.module('BindingApp', [])
+.controller('BidingController', BidingController);
 
-CounterController.$inject = ['$scope', '$timeout'];
-	function CounterController($scope, $timeout) {
-		$scope.counter = 0;
+BidingController.$inject = ['$scope'];
+	function BidingController($scope) {
+		$scope.firstName = "Yaakov";
+		$scope.fullName = "";
 
-		// Not a really good way.
-		// Try not to use it
-		// $scope.upCounter = function(){
-		// 	setTimeout(function(){
-		// 		$scope.counter++;
-		// 		console.log("Counter incremented");
-
-		// 		$scope.$digest();
-		// 	}, 2000);
-		// };
-
-		// Also not a good way
-		// $scope.upCounter = function(){
-		// 	setTimeout(function(){
-		// 		$scope.$apply(function(){
-		// 			$scope.counter++;
-		// 			console.log("Counter incremented");	
-		// 		})
-		// 	}, 2000);
-		// };
-
-
-		// There is always angular alternative
-		// Try to use if it exists
-		$scope.upCounter = function(){
-			$timeout(function(){
-				$scope.counter++;
-				console.log("Counter incremented");	
-			}, 2000);
+		$scope.showNumbersOfWatchers = function(){
+			console.log("# of Watchers: ", $scope.$$watchersCount);
 		};
+
+		$scope.setFullName = function(){
+			$scope.fullName = $scope.firstName + " " + "Chaikin";
+		};
+
+		$scope.logFirstName = function(){
+			console.log("First name is: ", $scope.firstName);
+		};
+		
+		$scope.logFullName = function(){
+			console.log("Full name is :", $scope.fullName);
+		}	
 	}
-
-
+	
 })();

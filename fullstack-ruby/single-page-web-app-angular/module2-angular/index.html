@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="CounterApp">
+<html ng-app="BindingApp">
 <head>
 	<meta charset="UTF-8">
 	<title>AngularJS App</title>
@@ -8,12 +8,16 @@
 </head>
 <body>
 	<h1>Digest Cycle</h1>
-	<div ng-controller="CounterController">
+	<div ng-controller="BidingController">
+		<button ng-click="showNumbersOfWatchers();">Log #</button>
+		<button ng-click="setFullName()"> Set Full Name</button> <br>
+
+		Full name is: {{ :: fullName}} <br>
+		<button ng-click="logFirstName()">Log First Name</button>
+		<button ng-click="logFullName()">Log Full Name</button>
+
 		<div>
-			<button ng-click="upCounter()">Increment counter (once)</button>
-		</div>
-		<div>
-			Regular counter: {{counter}}
+			<input type="text ng-model="firstName>
 		</div>
 	</div>
 </body>
