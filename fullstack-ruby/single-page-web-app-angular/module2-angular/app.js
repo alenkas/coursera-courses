@@ -7,7 +7,7 @@ angular.module('CounterApp', [])
 
 CounterController.$inject = ['$scope'];
 	function CounterController($scope) {
-
+		$scope.name = "Yaakov";
 		$scope.onceCounter = 0;
 		$scope.counter = 0;
 	
@@ -23,15 +23,19 @@ CounterController.$inject = ['$scope'];
 			$scope.counter++;
 		};
 
-		$scope.$watch('onceCounter', function(newValue, oldValue){
-			console.log(oldValue);
-			console.log(newValue);
+		$scope.$watch(function(){
+			console.log("Digest loop fired");
 		});
 
-		$scope.$watch('counter', function(newValue, oldValue){
-			console.log(oldValue);
-			console.log(newValue);
-		});
+		// $scope.$watch('onceCounter', function(newValue, oldValue){
+		// 	console.log(oldValue);
+		// 	console.log(newValue);
+		// });
+
+		// $scope.$watch('counter', function(newValue, oldValue){
+		// 	console.log(oldValue);
+		// 	console.log(newValue);
+		// });
 	}
 
 
